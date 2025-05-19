@@ -8,3 +8,10 @@ print(id_number)  # Print the ID number in uppercase
 id_number_space = id_number.replace(" ", "")  # Remove spaces from the ID number
 # print(id_number.replace(" ", ""))  # Remove spaces from the ID number
 print(id_number_space.isalnum())  # Check if the ID number is alphanumeric
+
+
+name = "Phone Wint Tun"
+data = name.count("n")
+result = name.find("o") #find by index number
+print(f"Occurence of 'n' :{data}")
+print(result)

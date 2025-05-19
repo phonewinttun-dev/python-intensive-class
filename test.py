@@ -28,6 +28,8 @@ print("Your name:", name , "\n" , "Age:", 2025 - int(date_of_birth), "\n", "Occu
 
 '''
 
+'''
+
 name = input("Hello, what's your name? \n")
 print(f"Hello,{name}!")
 date_of_birth = int(input("Please tell us your date of birth: "))
@@ -42,3 +44,18 @@ print(f"Age: {2025 - date_of_birth}")
 print(f"Address: {address}")
 print(f"Occupation: {occupation}")
 print(f"Hobby: {hobby}")
+
+'''
+'''
+num = input("Enter a number: ")
+print(num * 3)
+
+'''
+
+num1 = float(input("Enter a num: "))
+num2 = float(input("Enter a num: "))
+
+if num1 > num2:
+  print(f"{num1} is greater than {num2}")
+else:
+  print(f"{num2} is greater than {num1}")
