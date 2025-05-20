@@ -1,5 +1,6 @@
-input = input("Enter a string: ")
-input = input.lower()  # convert to lowercase
+user_input = input("Enter a string: ")
+user_input = input.lower()  # convert to lowercase
+
 '''
 for i in range(len(input) // 2):
   if input[i] != input[-(i + 1)]:
@@ -22,7 +23,7 @@ else:
   print("Not a palindrome")
 ''' 
 
-if input == input[::-1]:
+if user_input == user_input[::-1]:
   print("It's a palindrome")
 else: 
   print("Not a palindrome")
