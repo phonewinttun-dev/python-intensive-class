@@ -1,12 +1,15 @@
-'''
-Write a function that takes a sentence as input and returns the number of vowels (a, e, i, o, u) in it. 
-Remember to handle both uppercase and lowercase vowels.
-'''
 
 user_input = input("Enter a sentence: ")
-user_input = user_input.lower()  # convert to lowercase
+user_input = user_input.lower()  
 vowels = "aeiou"
-
+vowel_count = 0
+word_count = len(user_input.split())  
+letter_count = len(user_input.replace(" ", ""))
+  
 for i in user_input:
   if i in vowels:
-    print(f"{i} is a vowel")
+    vowel_count += 1
+
+print(f"Letter count: {letter_count}")
+print(f"Word count: {word_count}")
+print(f"Vowel count: {vowel_count}")
