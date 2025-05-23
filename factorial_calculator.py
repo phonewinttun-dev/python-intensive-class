@@ -8,6 +8,8 @@ print(f"Factorial of {num} is {result}")
 '''
 Visualization of the calculation
 
+if user_input == 5
+
 result = 1 * 1 => 1
 result = 1 * 2 => 2
 result = 2 * 3 => 6
