@@ -1,0 +1,24 @@
+Library management system
+
+-> Create
+- Book name
+- Author
+- Genre
+- Book status (Available or not) 
+
+-> Update
+- Book name
+- Author
+- Genre
+- Book Status
+
+-> Read 
+- View all the books 
+- Search Book by book name
+- Search by author name
+- Search by genre
+- borrow book
+
+-> Delete
+
+- Delete book (obviously)
