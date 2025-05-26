@@ -31,13 +31,13 @@ def enroll_student():
       print("Please enter a digit for age.")
       continue
     else:
-       age = int(age)
+       int_age = int(age)
        break
       
   major = input("Enter a specialized major: ")
   new_student = {'ID' : student_id,
                  'Name' : name,
-                 'Age' : age,
+                 'Age' : int_age,
                  'Major' : major}
   students.append(new_student)
   print("Enrollment successful!")
@@ -47,7 +47,7 @@ def view_student():
     print("Students' list:")
     print("======================\n")
     for stud in students:
-      print(f"Name: {stud["Name"]}\t Age: {stud["Age"]}\t Major:  {stud["Major"]}")
+      print(f"Name: {stud["Name"]}\t Age: {stud["Age"]}\t Major: {stud["Major"]}")
 
 def update_info():
   student_id = int(input("Enter ID of the student you want to update: "))
@@ -90,8 +90,6 @@ while True:
   print("======================")
   option = int(input("Choose what you want to do: "))
   
-
-
   if option == 1:
     enroll_student()
 
