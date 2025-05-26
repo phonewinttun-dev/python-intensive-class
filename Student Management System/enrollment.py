@@ -14,15 +14,14 @@ students = [{"ID" : 1,
              "Major" : "Philosophy"}
 ]
 
-def search_item(id, items):
+def search_item(id_to_find, items):
     for item in items:
-        if item['ID'] == id:
+        if item['ID'] == id_to_find:
             return item
     else:
         return None
 
 def enroll_student():
-  student_id = input("Enter ID of the student: ")
   name = input("Enter a student name: ")
   while True:
     age = input("Enter age: ")
@@ -35,6 +34,16 @@ def enroll_student():
        break
       
   major = input("Enter a specialized major: ")
+# auto id generator
+  if students:
+     max_id = 0
+     for stud in students:
+        if "ID" in stud and stud["ID"] > max_id:
+          max_id = stud["ID"]
+          student_id = max_id + 1
+        else:
+           student_id = 1
+
   new_student = {'ID' : student_id,
                  'Name' : name,
                  'Age' : int_age,
@@ -57,13 +66,22 @@ def update_info():
     print(f"Current info of the student: {wanted_student}")
     name = input(f"Enter new name(leave blank to keep current): ")
     age = input(f"Enter new age(leave blank to keep current): ")
+    while True:
+      age = input("Enter age: ")
+
+      if not age.isdigit():
+        print("Please enter a digit for age.")
+        continue
+      else:
+        int_age = int(age)
+        break
     major = input(f"Enter new major(leave blank to keep current): ")
   
     if name:
       wanted_student['Name'] = name
   
     if age:
-      wanted_student['Age'] = int(age)
+      wanted_student['Age'] = int_age
 
     if major:
       wanted_student['Major'] = major
