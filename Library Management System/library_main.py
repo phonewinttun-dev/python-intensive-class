@@ -1,5 +1,5 @@
 from library_database import books
-from library_service import add_new_book,view_book, update_book_info
+from library_service import add_new_book,view_book, update_book_info, remove_book
 
 
 print("======================")
@@ -23,7 +23,7 @@ while True:
   elif option == 3:
     update_book_info()
   elif option == 4:
-    pass
+    remove_book()
   elif option == 5:
     print("Exiting the system.......")
     break

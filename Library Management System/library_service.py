@@ -46,7 +46,7 @@ def update_book_info():
   wanted_book = None
   wanted_book = search_item(book_id, books)
   if wanted_book:
-    print(f"Current info of the book: \n{books["ID"]}\t {books["Name"]}\t {books["Author"]}\t {books["Genre"]}\t {books["Status"]}")
+    print(f"Current info of the book: {wanted_book}")
     book_title = input("Enter new book's title(leave blank to keep current): ")
     author_name = input("Enter new author's name(leave blank to keep current): ")
     book_genre = input("Enter new genre(leave blank to keep current): ")
@@ -68,35 +68,9 @@ def update_book_info():
        return
     
   print(f"Update successful!")
-'''
-def update_info():
-  student_id = int(input("Enter ID of the student you want to update: "))
-  wanted_student = None
-  wanted_student = search_item(student_id, students)
-  if wanted_student:
-    print(f"Current info of the student: {wanted_student}")
-    name = input(f"Enter new name(leave blank to keep current): ")
-    age = input(f"Enter new age(leave blank to keep current): ")
-    while True:
-      age = input("Enter age: ")
 
-      if not age.isdigit():
-        print("Please enter a digit for age.")
-        continue
-      else:
-        int_age = int(age)
-        break
-    major = input(f"Enter new major(leave blank to keep current): ")
-  
-    if name:
-      wanted_student['Name'] = name
-  
-    if age:
-      wanted_student['Age'] = int_age
-
-    if major:
-      wanted_student['Major'] = major
-
-  print(f"{wanted_student} is updated successfully!")
-
-'''
+def remove_book():
+  book_id = int(input("Enter ID of the book you want to remove: "))
+  wanted_book = search_item(book_id, books)
+  books.remove(wanted_book)
+  print(f"{wanted_book} is removed successfully!")
