@@ -72,5 +72,9 @@ def update_book_info():
 def remove_book():
   book_id = int(input("Enter ID of the book you want to remove: "))
   wanted_book = search_item(book_id, books)
-  books.remove(wanted_book)
-  print(f"{wanted_book} is removed successfully!")
+  if wanted_book:
+    books.remove(wanted_book)
+    print(f"{wanted_book} is removed successfully!")
+  else:
+     print("Book not found!")
+
