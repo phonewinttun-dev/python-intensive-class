@@ -5,6 +5,7 @@ from utilities import search_item
 class StudentManagementSystem:
   def __init__(self):
     self.students = students
+    self.id_generator = 1
 
   def main_menu(self):
     print("======================")
@@ -16,7 +17,8 @@ class StudentManagementSystem:
     print("======================")
 
   def enroll_student(self):
-    student_id = input("Enter an ID: ")
+    student_id = f"{self.id_generator:03d}"
+    self.id_generator += 1  
     name = input("Enter a student name: ")
     while True:
       age = input("Enter age: ")
@@ -42,7 +44,7 @@ class StudentManagementSystem:
       print("Students' list:")
       print("======================\n")
       for stud in self.students:
-        print(f"Name: {stud.name}\t Age: {stud.age}\t Major: {stud.major}")
+        print(f"ID: {stud.id} Name: {stud.name}\t Age: {stud.age}\t Major: {stud.major}")
 
   def update_info(self):
     student_id = input("Enter ID of the student you want to update: ")
