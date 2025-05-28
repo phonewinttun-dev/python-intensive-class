@@ -53,19 +53,8 @@ class StudentManagementSystem:
     if wanted_student:
       print(f"Current info of the student: {wanted_student.display_info()}")
       name = input(f"Enter new name(leave blank to keep current): ")
-      
-      while True:
-        age = input("Enter age(leave blank to keep current): ")
-
-        if not age.isdigit():
-          print("Please enter a digit for age.")
-        else:
-          int_age = int(age)
-
-          if int_age <= 0:
-            print("Error! Please enter a valid age.")
-          else:
-            break
+      age = input("Enter age(leave blank to keep current): ")
+      int_age = int(age)
       major = input(f"Enter new major(leave blank to keep current): ")
     
       if name:
