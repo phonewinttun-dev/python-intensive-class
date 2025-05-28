@@ -1,40 +1,34 @@
-#database configuration
-from student_data import students
-from student_services import enroll_student, view_student, update_info, remove_student
+from studmgmtsys import StudentManagementSystem
 
+print("=========================================")
+print("Welcome to our student management system!")
+print("=========================================\n")
 
-print("======================")
-print("Welcome to our system")
-print("======================")
+def main():
+  studmgmt = StudentManagementSystem()
+  while True:
+    studmgmt.main_menu()
+    option = int(input("Choose what you want to do: "))
+    
+    if option == 1:
+      studmgmt.enroll_student()
 
-while True:
-  print("======================")
-  print("1. Enroll a new student")
-  print("2. View all the students")
-  print("3. Update info")
-  print("4. Remove a student")
-  print("5. Exit")
-  print("======================")
-  option = int(input("Choose what you want to do: "))
-  
-  if option == 1:
-    enroll_student()
+    elif option == 2:
+      studmgmt.view_student()
+        
+    elif option == 3:
+      studmgmt.update_info()
+    
+    elif option == 4:
+      studmgmt.remove_student()
 
-  elif option == 2:
-    view_student()
-      
-  elif option == 3:
-    update_info()
-  
-  elif option == 4:
-     remove_student()
+    elif option == 5:
+      print("Exiting the system.......")
+      break
+    else:
+        print("Invalid option. Please choose a valid number.")  
 
-  elif option == 5:
-    print("Exiting the system.......")
-    break
-  else:
-      print("Invalid option. Please choose a valid number.")  
-
+main()
 # ID_AUTO_GENERATOR
 
 '''  
