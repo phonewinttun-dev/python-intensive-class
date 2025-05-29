@@ -71,5 +71,8 @@ class StudentManagementSystem:
   def remove_student(self):
     student_id = input("Enter ID of the student you want to remove: ")
     wanted_student = search_item(student_id, self.students)
-    self.students.remove(wanted_student)
-    print(f"{wanted_student.name} is removed successfully!")
+    if wanted_student in self.students:
+      self.students.remove(wanted_student)
+      print(f"{wanted_student.name} is removed successfully!")
+    else:
+      print("Student does not exist.")
