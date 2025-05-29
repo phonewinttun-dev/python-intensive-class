@@ -5,7 +5,16 @@ from utilities import search_item
 class StudentManagementSystem:
   def __init__(self):
     self.students = students
-    self.id_generator = 1
+  
+  def id_auto_generator(self):
+    max_id = 0
+    for stud in self.students:
+      current_id = int(stud.id)
+      if current_id > max_id:
+        max_id = current_id
+    new_id = max_id + 1
+    return f"{new_id:03d}"
+    
 
   def main_menu(self):
     print("======================")
@@ -17,8 +26,8 @@ class StudentManagementSystem:
     print("======================")
 
   def enroll_student(self):
-    student_id = f"{self.id_generator:03d}"
-    self.id_generator += 1  
+    student_id = self.id_auto_generator()
+      
     name = input("Enter a student name: ")
     while True:
       age = input("Enter age: ")

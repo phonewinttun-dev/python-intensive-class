@@ -29,15 +29,3 @@ def main():
         print("Invalid option. Please choose a valid number.")  
 
 main()
-# ID_AUTO_GENERATOR
-
-'''  
-    while True:
-     removed_student = input("Enter a student name you want to remove: ")
-     if removed_student in students:
-      students.remove(removed_student)
-      print(f"{removed_student} is removed successfully!")
-      break
-     else:
-      print("Please enter a valid student name")
-  '''
