@@ -1,11 +1,5 @@
 from library_database import books
-
-def search_item(id_to_find, items):
-    for item in items:
-        if item['ID'] == id_to_find:
-            return item
-    else:
-        return None
+from utilities import search_item
 
 
 def add_new_book():

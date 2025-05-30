@@ -8,6 +8,8 @@ print(person_info.keys())
 
 print(person_info.values())
 
+print(person_info['Age']) #accessing the data from dictionary using key 
+
 data = person_info.popitem()
 
 print(f'Removed item: {data}')

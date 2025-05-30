@@ -7,6 +7,7 @@ number_list = [1, 3, 5, 8, 10, 4, 2, 9]
 max_num = 0
 
 for num in number_list:
+  print(num)
   if num > max_num:
     max_num = num
     
