@@ -5,3 +5,5 @@ students = [
     Students("002", "Daniel", 22, "Mathematics"),
     Students("003", "Myat", 21, "Philosophy")
 ]
+
+#students store as list

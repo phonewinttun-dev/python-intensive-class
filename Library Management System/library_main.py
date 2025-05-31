@@ -1,5 +1,5 @@
 from library_database import books
-from library_service import add_new_book,view_book, update_book_info, remove_book
+from library_management import add_new_book,view_book, update_book_info, remove_book
 
 
 print("======================")

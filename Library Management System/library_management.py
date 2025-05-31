@@ -1,5 +1,6 @@
 from library_database import books
 from utilities import search_item
+from book_class import Book
 
 
 def add_new_book():
@@ -8,6 +9,18 @@ def add_new_book():
   book_genre = input("Enter genre: ")
   book_status = input("Enter book status (Available/Unavailable): ")
   
+  '''
+  def id_auto_generator(self):
+    max_id = 0
+    for stud in self.students:
+      current_id = int(stud.id)
+      if current_id > max_id:
+        max_id = current_id
+    new_id = max_id + 1
+    return f"{new_id:03d}"
+  '''
+
+
   if books:
     max_id = 0
     for book in books:
