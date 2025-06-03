@@ -2,7 +2,7 @@ from library_database import books
 from utilities import search_item
 from book_class import Book
 
-
+'''
 class library_management_system:
   def __init__(self):
     self.library = books
@@ -39,12 +39,12 @@ class library_management_system:
     self.books[book_id] = new_book
     print(f"{new_book.title} has been added successfully")
 
-  def view_book():
+  def view_book(self):
     print("======================")
     print("Books' list:")
     print("======================\n")
-    for book in books:
-      print(f"ID : {book["ID"]}\t Title: {book["Title"]}\t Author: {book["Author"]}\t Genre: {book["Genre"]}\t Status: {book["Status"]}")
+    for book in self.books.values():
+      print(book.display_info())
 
   def update_book_info():
     book_id = int(input("Enter ID of the book you want to update: "))
@@ -82,4 +82,4 @@ class library_management_system:
       print(f"{wanted_book} is removed successfully!")
     else:
       print("Book not found!")
-
+'''

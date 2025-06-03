@@ -1,10 +1,12 @@
 from library_database import books
-from library_management import add_new_book,view_book, update_book_info, remove_book
+from library_management import library_management_system
 
-
+'''
 print("======================")
 print("Welcome to our library!")
 print("======================")
+
+lib_mgmt = library_management_system()
 
 while True:
   print("======================")
@@ -17,17 +19,19 @@ while True:
   option = int(input("Choose what you want to do: "))
   
   if option == 1:
-    add_new_book()
+    lib_mgmt.add_new_book()
   elif option == 2:
-    view_book()
+    lib_mgmt.view_book()
   elif option == 3:
-    update_book_info()
+    #update_book_info()
+    pass
   elif option == 4:
-    remove_book()
+    #remove_book()
+    pass
   elif option == 5:
     print("Exiting the system.......")
     break
   else:
       print("Invalid option. Please choose a valid number.")  
   
-
+'''
