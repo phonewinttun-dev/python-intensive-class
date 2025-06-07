@@ -1,2 +1,1 @@
-To practice, incomplete
-To study, incomplete
+Task Name: to do something, Status: pending

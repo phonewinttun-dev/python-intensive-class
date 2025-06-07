@@ -13,19 +13,19 @@ class ToDoSystem:
     def __init__(self, tasks):
         self.tasks = tasks
 
-    def add_task(self, task_name, task_status):
-        new_task = Task(task_name, task_status)
+    def add_task(self, new_task):
         self.tasks.append(new_task)
+        return True
 
     def remove_task(self, task_name):
-        for task in self.task: 
+        for task in self.tasks: 
             if task.task_name == task_name:
                 self.tasks.remove(task)
                 return True
         return False
 
     def update_task(self, task_name):
-        for task in self.task:
+        for task in self.tasks:
             if task.task_name == task_name:
                 task.task_status = "Completed"
                 return True
