@@ -1,1 +1,3 @@
-Task Name: to do something, Status: pending
+to study, incomplete
+to do homework, pending
+to read, incomplete

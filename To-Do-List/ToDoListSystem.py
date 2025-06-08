@@ -1,4 +1,3 @@
-from task import Task
 
 class ToDoSystem:
     def main_menu(self):

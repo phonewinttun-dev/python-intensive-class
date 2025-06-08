@@ -33,9 +33,13 @@ def main():
 
 
         elif option == '3':
-            updated_task_name = input("Enter the name of task you want to change status: ")
-            to_do_system.update_task(updated_task_name)
-
+            updated_task_name = input("Enter the name of task you want to mark completed: ")
+            if to_do_system.update_task(updated_task_name):
+                print(f"{updated_task_name}'s status has been marked completed.")
+                save_tasks(to_do_system.tasks, "tasks.txt")
+            else:
+                print("Task does not exist! Please enter an existing task name.")
+                
         elif option == '4':
             to_do_system.list_tasks()
 
