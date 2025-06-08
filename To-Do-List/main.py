@@ -25,7 +25,12 @@ def main():
 
         elif option == '2':
             removed_task_name = input("Enter the name of task you want to remove: ")
-            to_do_system.remove_task(removed_task_name)
+            if to_do_system.remove_task(removed_task_name):
+                print(f"{removed_task_name} has been removed successfully.")
+                save_tasks(to_do_system.tasks, "tasks.txt")
+            else:
+                print("Task does not exist! Please enter an existing task name.")
+
 
         elif option == '3':
             updated_task_name = input("Enter the name of task you want to change status: ")
