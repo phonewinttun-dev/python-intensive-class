@@ -14,5 +14,5 @@ def load_tasks(filename):
 def save_tasks(tasks, filename):
     with open (filename, "w") as file:
         for task in tasks:
-            file.write(f"Task Name: {task.task_name}, Status: {task.task_status}\n")
+            file.write(f"{task.task_name}, {task.task_status}\n")
     
