@@ -13,7 +13,12 @@ def main():
 
         if option == '1':
             task_name = input("Enter the name of task: ")
-            task_status = input("Enter status of the task: ")
+            while True:
+                task_status = input("Enter status of the task(pending or incomplete): ")
+                if task_status in ["pending", "incomplete"]:
+                    break
+                else:
+                    print("Invalid status. Please enter 'pending' or 'incomplete'.")
             new_task = Task(task_name, task_status)
             to_do_system.add_task(new_task)
             save_tasks(to_do_system.tasks, "tasks.txt")
