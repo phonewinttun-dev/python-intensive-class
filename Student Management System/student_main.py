@@ -38,7 +38,7 @@ def main():
       studmgmt.view_student()
         
     elif option == 3:
-      student_id = input("Enter the ID of the student you want to update:")
+      student_id = input("Enter the ID of the student you want to update: ")
       student_name = input("Enter new student name(press Enter to skip): ")
       while True:
         student_age_input = input("Enter new student age(press Enter to skip): ")
@@ -60,10 +60,15 @@ def main():
         save_data(studmgmt.students, "students_data.txt")
       else:
         print("Student not found! Please enter the ID of existing student!")
-
     
     elif option == 4:
-      pass
+      student_id = input("Enter the ID of the student you want to remove: ")
+      if studmgmt.remove_student(student_id):
+        print("-----Removed successfully!-----")
+        save_data(studmgmt.students, "students_data.txt")
+      else:
+        print("Student not found! Please enter the ID of existing student!")
+
 
     elif option == 5:
       print("Exiting the system.......")
