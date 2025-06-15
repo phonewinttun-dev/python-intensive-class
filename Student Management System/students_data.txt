@@ -1,0 +1,3 @@
+001, George, 20, Computer Science"
+002, Daniel, 22, Mathematics"
+003, Myat, 21, Philosophy"
