@@ -8,7 +8,7 @@ print("=========================================\n")
 
 
 def main():
-  students_data = load_data("students_data.txt")
+  students_data = load_data("D:\python\Student Management System\students_data.txt")
   studmgmt = StudentManagementSystem(students_data)
   while True:
     studmgmt.main_menu()
@@ -23,7 +23,7 @@ def main():
           print("Please enter a nnumber.")
           continue
         student_age = int(student_age_input)
-        if student_age < 0 or student_age > 100: 
+        if (0 < student_age >= 100): 
           print("Please enter a valid age.")
         else:
           break
@@ -31,7 +31,7 @@ def main():
       student_id = studmgmt.id_auto_generator()
       new_student = Students(student_id, student_name, student_age, major)
       studmgmt.enroll_student(new_student)
-      save_data(studmgmt.students, "students_data.txt")
+      save_data(studmgmt.students, "D:\python\Student Management System\students_data.txt")
       print("-----Enrollment Successful!-----")
 
     elif option == 2:
@@ -57,7 +57,7 @@ def main():
       updated_student = studmgmt.update_info(student_id, student_name, student_age, major)
       if updated_student:
         print("-----Student Info updated successfully!-----")
-        save_data(studmgmt.students, "students_data.txt")
+        save_data(studmgmt.students, "D:\python\Student Management System\students_data.txt")
       else:
         print("Student not found! Please enter the ID of existing student!")
     
@@ -65,7 +65,7 @@ def main():
       student_id = input("Enter the ID of the student you want to remove: ")
       if studmgmt.remove_student(student_id):
         print("-----Removed successfully!-----")
-        save_data(studmgmt.students, "students_data.txt")
+        save_data(studmgmt.students, "D:\python\Student Management System\students_data.txt")
       else:
         print("Student not found! Please enter the ID of existing student!")
 

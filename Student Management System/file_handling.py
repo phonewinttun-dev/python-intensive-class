@@ -14,4 +14,4 @@ def load_data(filename):
 def save_data(students, filename):
     with open (filename, "w") as file:
         for stud in students:
-            file.write(f"{stud.stud_id}, {stud.stud_name}, {stud.stud_age}, {stud.major}\n")
+            file.write(f"{stud.id}, {stud.name}, {stud.age}, {stud.major}\n")
