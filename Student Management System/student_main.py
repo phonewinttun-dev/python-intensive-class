@@ -1,26 +1,32 @@
 from studmgmtsys import StudentManagementSystem
+from file_handling import load_data, save_data
+from student_class import Students
 
 print("=========================================")
 print("Welcome to our student management system!")
 print("=========================================\n")
 
+
+
 def main():
-  studmgmt = StudentManagementSystem()
+  students_data = load_data("students_data.txt")
+  studmgmt = StudentManagementSystem(students_data)
   while True:
     studmgmt.main_menu()
+    
     option = int(input("Choose what you want to do: "))
     
     if option == 1:
-      studmgmt.enroll_student()
+      pass
 
     elif option == 2:
-      studmgmt.view_student()
+      pass
         
     elif option == 3:
-      studmgmt.update_info()
+      pass
     
     elif option == 4:
-      studmgmt.remove_student()
+      pass
 
     elif option == 5:
       print("Exiting the system.......")
