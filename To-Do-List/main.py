@@ -4,9 +4,9 @@ from task import Task
 # from user_class import User
 
 
-def operation(to_do_system_obj):
+def operation(to_do_system):
     while True:
-        to_do_system_obj.main_menu()
+        to_do_system.main_menu()
 
         option = input("Choose which option you want to do: ")
 
@@ -20,29 +20,25 @@ def operation(to_do_system_obj):
                     break
                 else:
                     print("Invalid status. Please enter 'pending' or 'incomplete'.")
-            
             new_task = Task(task_name, task_status)
-            if to_do_system_obj.add_task(new_task): 
-                print(f"Task '{task_name}' successfully added.")
-            else:
-                print("Failed to add task (ensure you are logged in).")
+            to_do_system.add_task(new_task)
 
         elif option == '2':
             removed_task_name = input("Enter the name of task you want to remove: ")
-            if to_do_system_obj.remove_task(removed_task_name):
+            if to_do_system.remove_task(removed_task_name):
                 print(f"Task '{removed_task_name}' removed successfully .")
             else:
                 print("Task not found or failed to remove.")
             
         elif option == '3': 
             updated_task_name = input("Enter the name of task you want to mark completed: ")
-            if to_do_system_obj.update_task(updated_task_name):
+            if to_do_system.update_task(updated_task_name):
                 print(f"Task '{updated_task_name}' status updated successfully.")
             else:
                 print("Task not found or failed to update.")
             
         elif option == '4':
-            to_do_system_obj.list_tasks() 
+            to_do_system.list_tasks() 
 
         elif option == '5': 
             print("Exiting the task management system....")
@@ -62,7 +58,9 @@ def main():
         auth_opt = input("Choose which option you want to do: ")
 
         if auth_opt == '1': 
-            logged_in = to_do_system.login_account() 
+            logged_in = to_do_system.login_account()
+            print(f"\nWelcome to your To-Do List, {to_do_system.current_username}!")
+            print("You are successfully logged in and can now manage your tasks.")
             operation(to_do_system)
         elif auth_opt == '2': 
             registration_successful = to_do_system.register() 
@@ -73,11 +71,10 @@ def main():
             return 
         else:
             print("Invalid option! Please choose the valid option.")
+            
 
-    print(f"\nWelcome to your To-Do List, {to_do_system.current_username}!")
-    print("You are successfully logged in and can now manage your tasks.")
     
-    operation(to_do_system)
+    
 
 # This standard Python idiom ensures main() runs only when the script is executed directly.
 if __name__ == "__main__":

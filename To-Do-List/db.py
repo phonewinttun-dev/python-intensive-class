@@ -32,6 +32,18 @@ def check_user_exists(username,password):
     connection.close()
 
     if user_data:
-        print(f"UserID: {user_data[0]}, Username: {user_data[1]}")
+        return {"user_id": user_data[0], "username": user_data[1]}
     else:
         return None
+    
+def add_tasks_db(user_id, task_name, task_status):
+    connection = get_connection()
+    cursor = connection.cursor()
+    query = "INSERT INTO tasks(user_id, task_name, task_status) VALUES (%s, %s, %s);"
+    cursor.execute(query, (user_id, task_name, task_status))
+    connection.commit()
+    cursor.close()
+    connection.close()
+    return True
+    
+    

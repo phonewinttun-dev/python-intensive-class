@@ -1,4 +1,4 @@
-from db import add_user, check_user_exists
+from db import add_user, check_user_exists, add_tasks_db
 
 class ToDoSystem:
 
@@ -11,11 +11,14 @@ class ToDoSystem:
         print("5. Exit")
         print("======================")
 
-
-
     def add_task(self, new_task):
-        self.tasks.append(new_task)
-        return True
+        if self.user_id:
+            if add_tasks_db(self.user_id, new_task.task_name, new_task.task_status):
+                print(f"Task : {new_task.task_name} added successfully!")
+                return True
+            else:
+                print("Failed to add task! Something went wrong!")
+                return False
 
     def remove_task(self, task_name):
         for task in self.tasks: 
@@ -54,7 +57,7 @@ class ToDoSystem:
         check_user = check_user_exists(username, password)
         if check_user:
             self.user_id = check_user["user_id"]
-            self.username = check_user["username"]
+            self.current_username = check_user["username"]
             print("Login successful!")
             return True
         else: 
