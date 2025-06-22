@@ -1,4 +1,4 @@
-from db import add_user, check_user_exists, add_tasks_db
+from db import add_user, check_user_exists, add_tasks_db, remove_tasks_db
 
 class ToDoSystem:
 
@@ -21,12 +21,14 @@ class ToDoSystem:
                 return False
 
     def remove_task(self, task_name):
-        for task in self.tasks: 
-            if task.task_name == task_name:
-                self.tasks.remove(task)
+        if self.user_id:
+            if remove_tasks_db(self.user_id, task_name):
+                print(f"{task_name} removed successfully!")
                 return True
-        return False
-
+            else:
+                print("Task not found!")
+                return False
+            
     def update_task(self, task_name):
         for task in self.tasks:
             if task.task_name == task_name:

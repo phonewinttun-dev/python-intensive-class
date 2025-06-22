@@ -46,4 +46,15 @@ def add_tasks_db(user_id, task_name, task_status):
     connection.close()
     return True
     
+
+def remove_tasks_db(user_id, task_name):
+    connection = get_connection()
+    cursor = connection.cursor()
+    query = "DELETE FROM tasks WHERE user_id = %s AND task_name = %s;"
+    cursor.execute(query, (user_id, task_name))
+    rows_affected = cursor.rowcount
+    connection.commit()
+    cursor.close()
+    connection.close()
+    return rows_affected > 0
     
