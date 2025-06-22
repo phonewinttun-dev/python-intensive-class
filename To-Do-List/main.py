@@ -29,11 +29,8 @@ def operation(to_do_system):
 
         elif option == '3': 
             updated_task_name = input("Enter the name of task you want to mark completed: ")
-            if to_do_system.update_task(updated_task_name):
-                print(f"Task '{updated_task_name}' status updated successfully.")
-            else:
-                print("Task not found or failed to update.")
-            
+            to_do_system.update_task(updated_task_name)
+        
         elif option == '4':
             to_do_system.list_tasks() 
 

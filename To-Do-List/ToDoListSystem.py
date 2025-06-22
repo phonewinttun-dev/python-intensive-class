@@ -1,4 +1,4 @@
-from db import add_user, check_user_exists, add_tasks_db, remove_tasks_db
+from db import add_user, check_user_exists, add_tasks_db, remove_tasks_db, update_tasks_db
 
 class ToDoSystem:
 
@@ -30,11 +30,12 @@ class ToDoSystem:
                 return False
             
     def update_task(self, task_name):
-        for task in self.tasks:
-            if task.task_name == task_name:
-                task.task_status = "Completed"
+        if self.user_id:
+            if update_tasks_db(self.user_id, task_name):
+                print("Task status has been marked as completed!")
                 return True
-        return False
+            else:
+                print("Update failed! Task not found!")
 
     def list_tasks(self):
         for task in self.tasks:
