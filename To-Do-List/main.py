@@ -24,6 +24,10 @@ def operation(to_do_system):
             to_do_system.add_task(new_task)
 
         elif option == '2':
+            check_if_tasks_exist = to_do_system.list_tasks()
+            if not check_if_tasks_exist:
+                print("No tasks found! Please add some tasks first.")
+                continue
             removed_task_name = input("Enter the name of task you want to remove: ")
             to_do_system.remove_task(removed_task_name)
 

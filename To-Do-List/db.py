@@ -73,9 +73,8 @@ def view_tasks_db(user_id):
     connection = get_connection()
     cursor = connection.cursor()
     query = "SELECT task_name, task_status FROM tasks WHERE user_id = %s ORDER BY created_at;"
-    cursor.execute(query, (user_id))
+    cursor.execute(query, (user_id,))
     tasks_data = cursor.fetchall()
-    connection.commit()
     cursor.close
     connection.close()
     return tasks_data

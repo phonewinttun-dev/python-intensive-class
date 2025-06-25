@@ -25,9 +25,6 @@ class ToDoSystem:
             if remove_tasks_db(self.user_id, task_name):
                 print(f"{task_name} removed successfully!")
                 return True
-            else:
-                print("Task not found!")
-                return False
             
     def update_task(self, task_name):
         if self.user_id:
@@ -47,8 +44,6 @@ class ToDoSystem:
                     task_status = task[1]
                     print(f"Task Name: {task_name}, Task Status: {task_status}")
                     task_count += 1
-            else:
-                print("No tasks found! Please add some tasks first.")
     
     def login_menu(self):
         print("You need to login or register first to use our system")
