@@ -1,4 +1,4 @@
-from db import add_user, check_user_exists, add_tasks_db, remove_tasks_db, update_tasks_db
+from db import *
 
 class ToDoSystem:
 
@@ -38,9 +38,17 @@ class ToDoSystem:
                 print("Update failed! Task not found!")
 
     def list_tasks(self):
-        for task in self.tasks:
-            print(f"Task Name: {task.task_name}, Status: {task.task_status}")
-
+        if self.user_id:
+            data = view_tasks_db(self.user_id)
+            if data: 
+                task_count = 1
+                for task in data:
+                    task_name = task[0]
+                    task_status = task[1]
+                    print(f"Task Name: {task_name}, Task Status: {task_status}")
+                    task_count += 1
+            else:
+                print("No tasks found! Please add some tasks first.")
     
     def login_menu(self):
         print("You need to login or register first to use our system")
